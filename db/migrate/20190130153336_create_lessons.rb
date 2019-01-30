@@ -6,8 +6,8 @@ class CreateLessons < ActiveRecord::Migration[5.2]
       t.string :grade
       t.string :subject
       t.integer :times_used
-      t.integer :added_by
       t.string :file
+      t.string :user_id
 
       t.timestamps
     end
