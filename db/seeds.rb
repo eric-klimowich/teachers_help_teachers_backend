@@ -10,7 +10,6 @@
 User.destroy_all
 Lesson.destroy_all
 Comment.destroy_all
-UserLesson.destroy_all
 
 User.create(username: "eklimowich", password: "e", first_name: "Eric", last_name: "Klimowich", grade_teaching: "4th", subject_teaching: "ELA")
 User.create(username: "mkuriscak", password: "m", first_name: "Mike", last_name: "Kuriscak", grade_teaching: "8th", subject_teaching: "Social Studies")
