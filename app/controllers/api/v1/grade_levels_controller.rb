@@ -30,7 +30,7 @@ class Api::V1::GradeLevelsController < ApplicationController
   private
 
   def grade_level_params
-    params.permit(:grade_levelname, :password, :first_name, :last_name, :grade_teaching, :subject_teaching)
+    params.permit(:grade, :user_id)
   end
 
   def find_grade_level

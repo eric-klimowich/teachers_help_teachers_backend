@@ -30,7 +30,7 @@ class Api::V1::LessonsController < ApplicationController
   private
 
   def lesson_params
-    params.permit(:title, :description, :grade, :subject, :times_used, :added_by, :file)
+    params.permit(:title, :description, :file, :times_used, :grade_subject_id)
   end
 
   def find_lesson
