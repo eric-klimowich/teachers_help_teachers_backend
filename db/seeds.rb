@@ -35,5 +35,5 @@ Comment.create(content: "This is a comment about Lesson 1", rating: 3, user_id: 
 Comment.create(content: "This is a comment about Lesson 3", rating: 3, user_id: 2, lesson_id: 3)
 
 Comment.create(content: "This is a comment about Lesson 1", rating: 4, user_id: 1, lesson_id: 1)
-Comment.create(content: "This is a comment about Lesson 1", rating: 2, user_id: 1, lesson_id: 2)
-Comment.create(content: "This is a comment about Lesson 3", rating: 3, user_id: 1, lesson_id: 2)
+Comment.create(content: "This is a comment about Lesson 2", rating: 2, user_id: 1, lesson_id: 2)
+Comment.create(content: "This is a comment about Lesson 2", rating: 3, user_id: 1, lesson_id: 2)
