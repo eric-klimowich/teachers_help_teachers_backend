@@ -30,7 +30,7 @@ class Api::V1::CommentsController < ApplicationController
   private
 
   def comment_params
-    params.permit(:cotent, :rating, :user_id, :lesson_id)
+    params.permit(:content, :rating, :user_id, :lesson_id)
   end
 
   def find_comment
