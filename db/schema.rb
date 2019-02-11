@@ -48,7 +48,8 @@ ActiveRecord::Schema.define(version: 2019_02_05_190457) do
   create_table "lessons", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.string "file"
+    t.text "file"
+    t.string "file_name"
     t.integer "times_used"
     t.integer "grade_subject_id"
     t.datetime "created_at", null: false

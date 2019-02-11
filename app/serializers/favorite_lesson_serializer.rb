@@ -1,16 +1,16 @@
 class FavoriteLessonSerializer < ActiveModel::Serializer
-  attributes :id, :lesson
+  attributes :id, :user_id, :lesson_id
 
-  def lesson
-    lesson_hash = {}
-
-    lesson_hash["lesson"] = object.lesson
-    lesson_hash["grade"] = object.lesson.grade_subject
-    lesson_hash["level"] = object.lesson.grade_subject.grade_level
-    lesson_hash["author"] = object.lesson.grade_subject.grade_level.user
-
-    lesson_hash
-  end
+  # def lessons
+  #   lesson_hash = {}
+  #
+  #   lesson_hash["lesson"] = object.lesson
+  #   lesson_hash["grade"] = object.lesson.grade_subject
+  #   lesson_hash["level"] = object.lesson.grade_subject.grade_level
+  #   lesson_hash["author"] = object.lesson.grade_subject.grade_level.user
+  #
+  #   lesson_hash
+  # end
 
   # def userinfo
   #   user_first_name_and_last_name = {}

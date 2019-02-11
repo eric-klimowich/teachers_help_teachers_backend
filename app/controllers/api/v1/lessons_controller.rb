@@ -1,9 +1,16 @@
+require 'base64'
+
 class Api::V1::LessonsController < ApplicationController
   before_action :find_lesson, only: [:update]
 
   def index
     @lessons = Lesson.all
     render json: @lessons
+  end
+
+  def show
+    @lesson = Lesson.find(params[:id])
+    send_data Base64.decode64(@lesson.file.sub("data:application/pdf;base64,", "")), filename: @lesson.file_name
   end
 
   def create
@@ -30,7 +37,7 @@ class Api::V1::LessonsController < ApplicationController
   private
 
   def lesson_params
-    params.permit(:title, :description, :file, :times_used, :grade_subject_id)
+    params.permit(:title, :description, :file, :file_name, :times_used, :grade_subject_id)
   end
 
   def find_lesson

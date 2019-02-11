@@ -30,7 +30,7 @@ class Api::V1::FavoriteLessonsController < ApplicationController
   private
 
   def favorite_lesson_params
-    params.permit(:content, :rating, :user_id, :lesson_id)
+    params.permit(:user_id, :lesson_id)
   end
 
   def find_favorite_lesson
