@@ -1,5 +1,5 @@
 class Api::V1::FavoriteLessonsController < ApplicationController
-  before_action :find_favorite_lesson, only: [:update]
+  before_action :find_favorite_lesson, only: [:update, :destroy]
 
   def index
     @favorite_lessons = FavoriteLesson.all

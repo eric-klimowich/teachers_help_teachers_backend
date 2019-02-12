@@ -13,8 +13,8 @@ GradeSubject.destroy_all
 Lesson.destroy_all
 Comment.destroy_all
 
-User.create(username: "eklimowich", password: "e", first_name: "Eric", last_name: "Klimowich")
-User.create(username: "mkuriscak", password: "m", first_name: "Mike", last_name: "Kuriscak")
+User.create(username: "eklimowich", password: "e", first_name: "Eric", last_name: "Klimowich", grade_teaching: "1st", subject_teaching: "ELA")
+User.create(username: "mkuriscak", password: "m", first_name: "Mike", last_name: "Kuriscak", grade_teaching: "4th", subject_teaching: "Math")
 
 GradeLevel.create(grade: "K", user_id: 1)
 GradeLevel.create(grade: "1st", user_id: 1)

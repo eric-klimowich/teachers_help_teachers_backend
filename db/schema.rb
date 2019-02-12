@@ -61,6 +61,8 @@ ActiveRecord::Schema.define(version: 2019_02_05_190457) do
     t.string "password"
     t.string "first_name"
     t.string "last_name"
+    t.string "grade_teaching"
+    t.string "subject_teaching"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
