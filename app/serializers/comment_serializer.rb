@@ -1,5 +1,5 @@
 class CommentSerializer < ActiveModel::Serializer
-  attributes :id, :content, :rating, :userinfo
+  attributes :id, :content, :rating, :userinfo, :created_at
 
   def userinfo
     user_first_name_and_last_name = {}
