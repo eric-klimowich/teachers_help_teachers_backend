@@ -18,7 +18,7 @@ class Api::V1::UsersController < ApplicationController
 
       secret_key = "password"
 
-      token = JWT.encode payload, secret_key, "HS256"
+      token = JWT.encode payload, secret_key(), "HS256"
 
       render json: {
         username: @user.username,
