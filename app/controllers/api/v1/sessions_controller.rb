@@ -10,9 +10,7 @@ class Api::V1::SessionsController < ApplicationController
         exp: Time.now.to_i + 7200000
       }
 
-      secret_key = "password"
-
-      token = JWT.encode payload, secret_key, "HS256"
+      token = JWT.encode payload, secret_key(), "HS256"
 
       render json: {
         username: @user.username,
