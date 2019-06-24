@@ -5,7 +5,7 @@ Rails.application.routes.draw do
       # resources :users, only: %i[create]
       # post '/login', to: 'auth#create'
       # get '/profile', to: 'users#profile'
-      resources :users, :grade_levels, :grade_subjects, :lessons, :comments, :favorite_lessons
+      resources :users, :sessions, :grade_levels, :grade_subjects, :lessons, :comments, :favorite_lessons
     end
   end
 end
