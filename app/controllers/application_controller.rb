@@ -20,11 +20,19 @@ class ApplicationController < ActionController::API
     request.headers['Authorization']
   end
 
-  def decode_token
+  def decoded_token
     begin
       JWT.decode get_token(), secret_key(), true
     rescue JWT::DecodeError => e
       nil
+    end
+  end
+
+  def authenticate
+    if !decoded_token
+      render json: {
+        message: "Authorization failed."
+      }, status: :unauthorized
     end
   end
 
