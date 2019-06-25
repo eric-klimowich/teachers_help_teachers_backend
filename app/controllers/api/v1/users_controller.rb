@@ -8,12 +8,6 @@ class Api::V1::UsersController < ApplicationController
 
   def show
 
-    begin
-      decoded_token = JWT.decode token, secret_key(), true
-    rescue JWT::DecodeError => e
-      decoded_token = nil
-    end
-
     if (!!decoded_token)
       render json: @user
     else

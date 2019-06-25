@@ -20,4 +20,12 @@ class ApplicationController < ActionController::API
     request.headers['Authorization']
   end
 
+  def decode_token
+    begin
+      JWT.decode get_token(), secret_key(), true
+    rescue JWT::DecodeError => e
+      nil
+    end
+  end
+
 end
