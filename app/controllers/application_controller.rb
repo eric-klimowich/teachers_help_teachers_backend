@@ -16,4 +16,8 @@ class ApplicationController < ActionController::API
     JWT.encode payload(), secret_key(), "HS256"
   end
 
+  def get_token
+    request.headers['Authorization']
+  end
+
 end

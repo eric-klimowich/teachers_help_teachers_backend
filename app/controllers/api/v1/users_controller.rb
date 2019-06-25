@@ -7,7 +7,6 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def show
-    token = request.headers['Authorization']
 
     begin
       decoded_token = JWT.decode token, secret_key(), true
