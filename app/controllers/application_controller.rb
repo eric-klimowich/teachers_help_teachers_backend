@@ -4,4 +4,12 @@ class ApplicationController < ActionController::API
     "password"
   end
 
+  def payload
+    {
+      sub: @user.id,
+      iat: Time.now.to_i,
+      exp: Time.now.to_i + 7200000
+    }
+  end
+
 end

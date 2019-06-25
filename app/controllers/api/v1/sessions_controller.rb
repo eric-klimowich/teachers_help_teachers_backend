@@ -4,13 +4,8 @@ class Api::V1::SessionsController < ApplicationController
     @user = User.find_by(username: params["username"])
 
     if (@user && @user.authenticate(params["password"]))
-      payload = {
-        sub: @user.id,
-        iat: Time.now.to_i,
-        exp: Time.now.to_i + 7200000
-      }
 
-      token = JWT.encode payload, secret_key(), "HS256"
+      token = JWT.encode payload(), secret_key(), "HS256"
 
       render json: {
         username: @user.username,

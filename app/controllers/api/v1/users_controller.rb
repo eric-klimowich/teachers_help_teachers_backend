@@ -10,13 +10,7 @@ class Api::V1::UsersController < ApplicationController
     @user = User.create(user_params)
     if @user.valid?
 
-      payload = {
-        sub: @user.id,
-        iat: Time.now.to_i,
-        exp: Time.now.to_i + 7200000
-      }
-
-      token = JWT.encode payload, secret_key(), "HS256"
+      token = JWT.encode payload(), secret_key(), "HS256"
 
       render json: {
         username: @user.username,
