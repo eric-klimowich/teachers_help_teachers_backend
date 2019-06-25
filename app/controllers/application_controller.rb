@@ -12,4 +12,8 @@ class ApplicationController < ActionController::API
     }
   end
 
+  def gen_token
+    JWT.encode payload(), secret_key(), "HS256"
+  end
+
 end

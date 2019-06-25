@@ -5,12 +5,10 @@ class Api::V1::SessionsController < ApplicationController
 
     if (@user && @user.authenticate(params["password"]))
 
-      token = JWT.encode payload(), secret_key(), "HS256"
-
       render json: {
         username: @user.username,
         id: @user.id,
-        token: token
+        token: gen_token()
         }
     else
       render json: {

@@ -10,12 +10,10 @@ class Api::V1::UsersController < ApplicationController
     @user = User.create(user_params)
     if @user.valid?
 
-      token = JWT.encode payload(), secret_key(), "HS256"
-
       render json: {
         username: @user.username,
         id: @user.id,
-        token: token
+        token: gen_token()
         }
     else
       render json: { errors: @user.errors.full_messages }, status: :unprocessible_entity
