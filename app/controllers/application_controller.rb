@@ -37,7 +37,12 @@ class ApplicationController < ActionController::API
   end
 
   def requires_user
-    decoded_token()[0]['sub'] == @user.id
+    @user = User.find(params[:id])
+
+    if decoded_token()[0]['sub'] != @user.id
+      render json: {
+        message: "Authorization failed."
+      }, status: :unauthorized
   end
 
 end
