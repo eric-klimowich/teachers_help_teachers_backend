@@ -36,4 +36,8 @@ class ApplicationController < ActionController::API
     end
   end
 
+  def requires_user
+    decoded_token()[0]['sub'] == @user.id
+  end
+
 end

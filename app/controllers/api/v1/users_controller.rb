@@ -7,9 +7,7 @@ class Api::V1::UsersController < ApplicationController
     render json: @users
   end
 
-  def show
-    decoded_token()[0]['sub'] == @user.id
-    
+  def show    
     render json: @user
   end
 
