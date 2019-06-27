@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::API
 
   def secret_key
-    "password"
+    ENV['SECRET_KEY']
   end
 
   def payload
