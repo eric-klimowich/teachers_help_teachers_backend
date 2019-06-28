@@ -43,6 +43,7 @@ class ApplicationController < ActionController::API
       render json: {
         message: "Authorization failed."
       }, status: :unauthorized
+    end
   end
 
 end
